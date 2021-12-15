@@ -29,3 +29,6 @@ dependencies {
     implementation 'io.javalin:javalin:4.1.1'
     implementation 'org.slf4j:slf4j-simple:1.7.32'
 }
+
+task stage(dependsOn: ['clean', 'installDist'])
+installDist.mustRunAfter clean
