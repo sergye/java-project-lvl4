@@ -8,6 +8,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'io.ebean' version '12.12.1'
 }
 
 repositories {
@@ -28,6 +29,24 @@ compileJava {
 dependencies {
     implementation 'io.javalin:javalin:4.1.1'
     implementation 'org.slf4j:slf4j-simple:1.7.32'
+
+    implementation 'io.ebean:ebean:12.13.0'
+    implementation 'io.ebean:ebean-ddl-generator:12.13.0'
+    implementation 'io.ebean:ebean-querybean:12.13.0'
+    implementation 'io.ebean:ebean-migration:12.12.1'
+    implementation 'io.ebean:ebean-annotation:7.3'
+    annotationProcessor 'io.ebean:querybean-generator:12.13.0'
+
+    implementation 'com.h2database:h2:1.4.200'
+
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.5'
+    implementation 'javax.activation:activation:1.1.1'
+
+}
+
+task generateMigrations(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'hexlet.code.MigrationGenerator'
 }
 
 task stage(dependsOn: ['clean', 'installDist'])
