@@ -38,6 +38,7 @@ dependencies {
     annotationProcessor 'io.ebean:querybean-generator:12.13.0'
 
     implementation 'com.h2database:h2:1.4.200'
+    implementation 'org.postgresql:postgresql:42.2.24'
 
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.5'
     implementation 'javax.activation:activation:1.1.1'
