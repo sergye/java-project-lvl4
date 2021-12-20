@@ -1,4 +1,4 @@
-package hexlet.code.controllers;
+package hexlet.code.controller;
 
 import hexlet.code.model.Url;
 import hexlet.code.model.query.QUrl;
