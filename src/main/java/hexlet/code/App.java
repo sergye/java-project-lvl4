@@ -20,7 +20,6 @@ public final class App {
     private static final String PORT_NUMBER = "5000";
     private static final String APP_ENV = "APP_ENV";
     private static final String DEVELOPMENT_MODE = "development";
-    private static final String PRODUCTION_MODE = "production";
     private static final String PREFIX = "/templates/";
 
     public static void main(String[] args) {
@@ -31,7 +30,7 @@ public final class App {
 
     public static Javalin getApp() {
         Javalin app = Javalin.create(config -> {
-            if (!isProduction()) {
+            if (isDevelopment()) {
                 config.enableDevLogging();
             }
             config.enableWebjars();
@@ -47,9 +46,9 @@ public final class App {
         return app;
     }
 
-    private static boolean isProduction() {
+    private static boolean isDevelopment() {
         String mode = System.getenv().getOrDefault(APP_ENV, DEVELOPMENT_MODE);
-        return mode.equals(PRODUCTION_MODE);
+        return mode.equals(DEVELOPMENT_MODE);
     }
 
     private static TemplateEngine getTemplateEngine() {
