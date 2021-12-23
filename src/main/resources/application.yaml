@@ -12,3 +12,4 @@ datasource:
 ebean:
   migration:
     run: true
+    generate: true
