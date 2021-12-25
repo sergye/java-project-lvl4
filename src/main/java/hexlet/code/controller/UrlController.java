@@ -1,7 +1,7 @@
 package hexlet.code.controller;
 
-import hexlet.code.domain.Url;
-import hexlet.code.domain.query.QUrl;
+import hexlet.code.model.Url;
+import hexlet.code.model.query.QUrl;
 import io.javalin.http.Handler;
 
 import java.net.MalformedURLException;

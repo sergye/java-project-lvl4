@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.domain.Url;
+import hexlet.code.model.Url;
 import io.ebean.DB;
 import io.ebean.Transaction;
 import io.javalin.Javalin;
