@@ -1,5 +1,5 @@
 setup:
-	gradle wrapper --gradle-version 7.2
+	gradle wrapper --gradle-version 7.0
 
 clean:
 	./gradlew clean
@@ -8,7 +8,7 @@ build:
 	./gradlew clean build
 
 start:
-	APP_ENV=development ./gradlew run
+	APP_ENV=development ./gradlew
 
 install:
 	./gradlew install
