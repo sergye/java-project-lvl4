@@ -1,0 +1,6 @@
+2021-12-26 16:39:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL_CHECK" not found; SQL statement:
+select t0.url_id, t0.id, t0.status_code, t0.title, t0.h1, t0.url_id, t0.created_at from url_check t0 where (t0.url_id) in (?,?,?,?,?) [42102-200]
+2021-12-26 16:43:54 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL_CHECK" not found; SQL statement:
+select t0.url_id, t0.id, t0.status_code, t0.title, t0.h1, t0.url_id, t0.created_at from url_check t0 where (t0.url_id) in (?,?,?,?,?) [42102-200]
