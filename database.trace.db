@@ -4,3 +4,535 @@ select t0.url_id, t0.id, t0.status_code, t0.title, t0.h1, t0.url_id, t0.created_
 2021-12-26 16:43:54 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL_CHECK" not found; SQL statement:
 select t0.url_id, t0.id, t0.status_code, t0.title, t0.h1, t0.url_id, t0.created_at from url_check t0 where (t0.url_id) in (?,?,?,?,?) [42102-200]
+2021-12-26 19:07:01 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 32768 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 32768 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 32768 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
+2021-12-26 19:07:01 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
+2021-12-26 19:07:01 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue.ensureMinimumConnections(PooledConnectionQueue.java:157)
+	at io.ebean.datasource.pool.PooledConnectionQueue.trim(PooledConnectionQueue.java:343)
+	at io.ebean.datasource.pool.ConnectionPool.trimIdleConnections(ConnectionPool.java:370)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:385)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 35 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 29 more
+2021-12-26 19:07:02 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue.ensureMinimumConnections(PooledConnectionQueue.java:157)
+	at io.ebean.datasource.pool.PooledConnectionQueue.trim(PooledConnectionQueue.java:343)
+	at io.ebean.datasource.pool.ConnectionPool.trimIdleConnections(ConnectionPool.java:370)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:385)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 35 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 29 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 30 more
+2021-12-26 19:07:02 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+2021-12-26 19:07:02 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+2021-12-26 19:07:01 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 30 more
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue.ensureMinimumConnections(PooledConnectionQueue.java:157)
+	at io.ebean.datasource.pool.PooledConnectionQueue.trim(PooledConnectionQueue.java:343)
+	at io.ebean.datasource.pool.ConnectionPool.trimIdleConnections(ConnectionPool.java:370)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:385)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 35 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 29 more
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 30 more
+2021-12-26 19:07:03 database: close
+2021-12-26 19:07:03 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+org.h2.message.DbException: IO Exception: "Closing" [90028-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.mvstore.db.MVTableEngine$Store.close(MVTableEngine.java:421)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1545)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue.ensureMinimumConnections(PooledConnectionQueue.java:157)
+	at io.ebean.datasource.pool.PooledConnectionQueue.trim(PooledConnectionQueue.java:343)
+	at io.ebean.datasource.pool.ConnectionPool.trimIdleConnections(ConnectionPool.java:370)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:385)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 35 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 29 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+2021-12-26 19:07:03 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue._getPooledConnection(PooledConnectionQueue.java:235)
+	at io.ebean.datasource.pool.PooledConnectionQueue.getPooledConnection(PooledConnectionQueue.java:196)
+	at io.ebean.datasource.pool.ConnectionPool.getPooledConnection(ConnectionPool.java:701)
+	at io.ebean.datasource.pool.ConnectionPool.getConnection(ConnectionPool.java:691)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:389)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 30 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 31 more
+2021-12-26 19:07:03 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:446)
+	at io.ebean.datasource.pool.ConnectionPool.createUnpooledConnection(ConnectionPool.java:441)
+	at io.ebean.datasource.pool.ConnectionPool.createConnectionForQueue(ConnectionPool.java:660)
+	at io.ebean.datasource.pool.PooledConnectionQueue._getPooledConnection(PooledConnectionQueue.java:235)
+	at io.ebean.datasource.pool.PooledConnectionQueue.getPooledConnection(PooledConnectionQueue.java:196)
+	at io.ebean.datasource.pool.ConnectionPool.getPooledConnection(ConnectionPool.java:701)
+	at io.ebean.datasource.pool.ConnectionPool.getConnection(ConnectionPool.java:691)
+	at io.ebean.datasource.pool.ConnectionPool.checkDataSource(ConnectionPool.java:389)
+	at org.h2.engine.Database.closeImpl(Database.java:1454)
+	at org.h2.engine.Database.close(Database.java:1373)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at io.ebean.datasource.pool.ConnectionPool.access$000(ConnectionPool.java:42)
+	at io.ebean.datasource.pool.ConnectionPool$HeartBeatRunnable.run(ConnectionPool.java:181)
+	at java.base/java.util.TimerThread.mainLoop(Timer.java:556)
+	at java.base/java.util.TimerThread.run(Timer.java:506)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 36 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "Closing" [90028-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 7 more
+	... 30 more
+Caused by: java.lang.IllegalStateException: Reading from file nio:/home/sergye/Hexlet/java/projects/java-project-lvl4/database.mv.db failed at 57344 (length 32768), read 0, remaining 8192 [1.4.200/1]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1915)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1753)
+	at org.h2.mvstore.MVStore.compactFile(MVStore.java:1970)
+	at org.h2.mvstore.MVStore.closeStore(MVStore.java:1170)
+	at org.h2.mvstore.MVStore.close(MVStore.java:1133)
+	at org.h2.mvstore.db.MVTableEngine$Store.close(MVTableEngine.java:404)
+	... 5 more
+Caused by: java.nio.channels.OverlappingFileLockException
+Caused by: java.io.EOFException
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:444)
+	... 14 more
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 30 more
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 31 more
+2021-12-26 19:07:03 database: close
+2021-12-26 19:07:03 database: close
+org.h2.message.DbException: IO Exception: "Closing" [90028-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.mvstore.db.MVTableEngine$Store.close(MVTableEngine.java:421)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1545)
+	at org.h2.engine.Database.closeImpl(Database.java:1454)
+	at org.h2.engine.Database.close(Database.java:1373)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "Closing" [90028-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 7 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1753)
+	at org.h2.mvstore.MVStore.compactFile(MVStore.java:1970)
+	at org.h2.mvstore.MVStore.closeStore(MVStore.java:1170)
+	at org.h2.mvstore.MVStore.close(MVStore.java:1133)
+	at org.h2.mvstore.db.MVTableEngine$Store.close(MVTableEngine.java:404)
+	... 5 more
+2021-12-26 19:07:03 database: close
+org.h2.message.DbException: General error: "General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]"" [50000-200]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:2221)
+	at org.h2.engine.Session.close(Session.java:945)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1549)
+	at org.h2.engine.Database.closeImpl(Database.java:1454)
+	at org.h2.engine.Database.close(Database.java:1373)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]"" [50000-200]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 8 more
+Caused by: org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
+org.h2.message.DbException: General error: "General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]"" [50000-200]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:2221)
+	at org.h2.engine.Session.close(Session.java:945)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1549)
+	at org.h2.engine.Database.closeImpl(Database.java:1454)
+	at org.h2.engine.Database.close(Database.java:1373)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]"" [50000-200]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 8 more
+Caused by: org.h2.message.DbException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2813)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:3290)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 6 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 28672 [1.4.200/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:172)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:1916)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1839)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:1772)
+	at org.h2.mvstore.MVStore.doMaintenance(MVStore.java:2848)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2788)
+	... 1 more
