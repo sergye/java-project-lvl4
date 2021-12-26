@@ -1,8 +1,11 @@
 package hexlet.code.controller;
 
 import hexlet.code.model.Url;
+import hexlet.code.model.UrlCheck;
 import hexlet.code.model.query.QUrl;
 import io.javalin.http.Handler;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -50,5 +53,22 @@ public final class UrlController {
             return;
         }
         ctx.redirect("/urls");
+    };
+
+    public static Handler checkUrl = ctx -> {
+        long id = ctx.pathParamAsClass("id", Long.class).getOrDefault(null);
+
+        Url url = new QUrl().id.equalTo(id).findOne();
+
+        HttpResponse<String> response = Unirest.get(url.getName()).asString();
+
+        int statusCode = response.getStatus();
+
+        UrlCheck urlCheck = new UrlCheck(statusCode, url);
+        urlCheck.save();
+
+        ctx.sessionAttribute("flash", "Страница успешно проверена");
+        ctx.sessionAttribute("flash-type", "success");
+        ctx.redirect("/urls/" + id);
     };
 }

@@ -17,7 +17,7 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 public final class App {
 
     private static final String PORT = "PORT";
-    private static final String PORT_NUMBER = "5000";
+    private static final String PORT_NUMBER = "4000";
     private static final String APP_ENV = "APP_ENV";
     private static final String DEVELOPMENT_MODE = "development";
     private static final String PREFIX = "/templates/";
@@ -72,6 +72,7 @@ public final class App {
                 get(UrlController.getUrls);
                 post(UrlController.addUrl);
                 get("{id}", UrlController.getUrl);
+                post("{id}/checks", UrlController.checkUrl);
             });
         });
     }

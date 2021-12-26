@@ -8,7 +8,7 @@ build:
 	./gradlew clean build
 
 start:
-	APP_ENV=development ./gradlew
+	APP_ENV=development ./build/install/app/bin/app
 
 install:
 	./gradlew install
