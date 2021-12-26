@@ -6,6 +6,8 @@ import hexlet.code.model.query.QUrl;
 import io.javalin.http.Handler;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -63,8 +65,22 @@ public final class UrlController {
         HttpResponse<String> response = Unirest.get(url.getName()).asString();
 
         int statusCode = response.getStatus();
+        Document body = Jsoup.parse(response.getBody());
+        String title = body.title();
+        String description = null;
+        String h1 = null;
 
-        UrlCheck urlCheck = new UrlCheck(statusCode, url);
+        if (body.selectFirst("meta[name=description]") != null) {
+            description = body.selectFirst("meta[name=description]").attr("content");
+        }
+
+
+        if (body.selectFirst("h1") != null) {
+            h1 = body.selectFirst("h1").text();
+        }
+
+
+        UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description, url);
         urlCheck.save();
 
         ctx.sessionAttribute("flash", "Страница успешно проверена");
