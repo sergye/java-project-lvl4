@@ -47,8 +47,9 @@ public final class AppTest {
     }
 
     @AfterAll
-    public static void afterAll() {
+    public static void afterAll() throws IOException {
         app.stop();
+        mockWebServer.shutdown();
     }
 
     @BeforeEach
