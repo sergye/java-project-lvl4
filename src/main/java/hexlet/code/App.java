@@ -17,7 +17,7 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 public final class App {
 
     private static final String PORT = "PORT";
-    private static final String PORT_NUMBER = "3000";
+    private static final String PORT_NUMBER = "7000";
     private static final String APP_ENV = "APP_ENV";
     private static final String DEVELOPMENT_MODE = "development";
     private static final String PREFIX = "/templates/";
