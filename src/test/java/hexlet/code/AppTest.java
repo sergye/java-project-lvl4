@@ -79,7 +79,7 @@ public final class AppTest {
 
             assertThat(response.getStatus()).isEqualTo(200);
             assertThat(body).contains(outputUrl);
-            assertThat(body).contains("Страница успешно добавлена");
+            assertThat(body).contains("Page successfully added");
 
         }
 
@@ -95,7 +95,7 @@ public final class AppTest {
             String body = response.getBody();
 
             assertThat(response.getStatus()).isEqualTo(200);
-            assertThat(body).contains("Страница уже существует");
+            assertThat(body).contains("Page already exists");
         }
 
         @Test
@@ -111,7 +111,7 @@ public final class AppTest {
 
             assertThat(response.getStatus()).isEqualTo(200);
             assertThat(body).doesNotContain(inputUrl);
-            assertThat(body).contains("Некорректный URL");
+            assertThat(body).contains("Invalid URL");
 
         }
 
