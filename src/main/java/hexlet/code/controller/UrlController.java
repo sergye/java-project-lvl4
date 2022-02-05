@@ -40,16 +40,16 @@ public final class UrlController {
             boolean urlExists = new QUrl().name.equalTo(url).exists();
 
             if (urlExists) {
-                ctx.sessionAttribute("flash", "Страница уже существует");
+                ctx.sessionAttribute("flash", "Page already exists");
                 ctx.sessionAttribute("flash-type", "info");
             } else {
                 new Url(url).save();
 
-                ctx.sessionAttribute("flash", "Страница успешно добавлена");
+                ctx.sessionAttribute("flash", "Page successfully added");
                 ctx.sessionAttribute("flash-type", "success");
             }
         } catch (MalformedURLException e) {
-            ctx.sessionAttribute("flash", "Некорректный URL");
+            ctx.sessionAttribute("flash", "Invalid URL");
             ctx.sessionAttribute("flash-type", "danger");
             ctx.redirect("/");
             return;
@@ -83,7 +83,7 @@ public final class UrlController {
         UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description, url);
         urlCheck.save();
 
-        ctx.sessionAttribute("flash", "Страница успешно проверена");
+        ctx.sessionAttribute("flash", "Page successfully checked");
         ctx.sessionAttribute("flash-type", "success");
         ctx.redirect("/urls/" + id);
     };
